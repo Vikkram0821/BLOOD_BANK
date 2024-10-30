@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://blood-bank-backend-m709.onrender.com/api/data";
+const API_URL = "https://blood-bank-backend-dp4j.onrender.com/api/data";
 
 export const getUserWithCity = async (city) => {
   const res = await axios.get(`${API_URL}/city/${city}`);
