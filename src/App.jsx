@@ -2,7 +2,7 @@ import Header from "./Components/Header";
 import { useEffect, useState, useRef } from "react";
 import SearchBox from "./Components/Search_box";
 import RegisterDonor from "./Components/registerDonor";
-import EmergencyUpdate from "./Components/EmergencyUpdate";
+import EmergencyUpdate from "./Components/emergencyUpdate";
 import { DataProvider } from "./Components/dataContext";
 import PatientsList from "./Components/patientsList";
 import Donor from "./Components/donorList";
