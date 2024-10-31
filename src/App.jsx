@@ -132,8 +132,8 @@ function App() {
           handleScrollToRegisterDonor={handleScrollToRegisterDonor}
           handleScrollToPatient={handleScrollToPatient}
         />
-        <EmergencyUpdate ref={registerPatientRef} isUpdate2={isUpdate2} />
-        <RegisterDonor ref={registerDonorRef} isUpdate1={isUpdate1} />
+        <EmergencyUpdate  isUpdate2={isUpdate2} ref={registerPatientRef}/>
+        <RegisterDonor  isUpdate1={isUpdate1} ref={registerDonorRef}/>
         <SearchBox
           toggleDonorTable={toggleDonorTable}
           toggleDonorTable2={toggleDonorTable2}
