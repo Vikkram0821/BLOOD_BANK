@@ -49,9 +49,34 @@ export const createUser = async (userData) => {
   return response.data;
 };
 
+// donorListApi.js
 export const updateUser = async (id, userData) => {
-  const response = await axios.put(`${API_URL}/update/id/${id}`, userData);
-  return response.data;
+  try {
+    // Validate data before sending
+    if (!id || !userData) {
+      throw new Error('Missing required data for update');
+    }
+
+    const response = await axios.put(
+      `${API_URL}/update/id/${id}`, 
+      userData,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        withCredentials: true
+      }
+    );
+
+    if (response.data.error) {
+      throw new Error(response.data.error);
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error('Update user error:', error);
+    throw error; // Re-throw to handle in the component
+  }
 };
 
 export const deleteUser = async (id) => {
