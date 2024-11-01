@@ -80,7 +80,7 @@ function App() {
       fetchDonors(city, blood);
       setDeletionOccurred(false);
     }
-  }, [deletionOccurred, setDeletionOccurred, showTableUD]);
+  }, [deletionOccurred, setDeletionOccurred]);
 
   const deleteEffect = () => {
     setCity(city);
@@ -110,7 +110,6 @@ function App() {
     );
     setDonors(data);
     console.log(data);
-    setShowTableUD(true);
   };
   const findEmergencyPatients = async () => {
     try {
@@ -152,13 +151,13 @@ function App() {
         />
 
         <BloodMatch showBloodMatch={showBloodMatch} />
+        <UpdateDonor showTableUD={showTableUD} donors={donors} />
         <PatientsList donors={donors} showTable3={showTable3} />
         <Donor
           deleteEffect={deleteEffect}
           showTable={showTable}
           donors={donors}
         />
-        {showTableUD && <UpdateDonor showTableUD={showTableUD} donors={donors} />}
       </DataProvider>
       <Footer />
     </>
