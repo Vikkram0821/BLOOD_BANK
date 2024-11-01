@@ -26,6 +26,7 @@ const UpdateDonor = ({ showTableUD, donors, setDonors }) => {
         )
       );
       setEditingDonorId(null);
+      window.location.reload();
     } catch (error) {
       console.error("Error updating donor:", error);
     }
