@@ -98,11 +98,7 @@ function App() {
       data = await getUserWithBlood(blood);
     }
     setDonors(data);
-     if (data.length > 0) {
-        setShowTable(true);
-    } else {
-        setShowTable(false); // Optionally hide if no donors found
-    }
+    setShowTable(true);
   };
 
   const findDonor = async (donor_name, donor_district, donor_bloodGroup) => {
@@ -114,6 +110,7 @@ function App() {
     );
     setDonors(data);
     console.log(data);
+    setShowTableUD(true);
   };
   const findEmergencyPatients = async () => {
     try {
@@ -138,8 +135,8 @@ function App() {
           handleScrollToRegisterDonor={handleScrollToRegisterDonor}
           handleScrollToPatient={handleScrollToPatient}
         />
-        <EmergencyUpdate  isUpdate2={isUpdate2} ref={registerPatientRef}/>
-        <RegisterDonor  isUpdate1={isUpdate1} ref={registerDonorRef}/>
+        <EmergencyUpdate isUpdate2={isUpdate2} ref={registerPatientRef} />
+        <RegisterDonor isUpdate1={isUpdate1} ref={registerDonorRef} />
         <SearchBox
           toggleDonorTable={toggleDonorTable}
           toggleDonorTable2={toggleDonorTable2}
