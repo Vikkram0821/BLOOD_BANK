@@ -24,9 +24,9 @@ Blood Stream is a user-friendly blood bank application designed to quickly conne
 <ul>
   <li><b>Donor Registration:</b> Allows users to register as blood donors with contact details and blood type.</li>
   <li><b>Search & Filter:</b> Users can search for donors based on blood type, location, and availability, with pagination for easy navigation.</li>
-  <li><b>Emergency Alerts:</b> Provides location-based emergency messaging to nearby ambulance services when in need.</li>
+ 
   <li><b>Secure Database:</b> All data is securely stored and accessed through MySQL on AWS RDS.</li>
-  <li><b>Responsive Design:</b> Optimized for mobile and desktop access.</li>
+  <li><b>Responsive Design:</b> Optimized for desktop access only.</li>
 </ul>
 
 ## <h2>🌐 Use Cases</h2>
