@@ -102,12 +102,14 @@ function App() {
   };
 
   const findDonor = async (donor_name, donor_district, donor_bloodGroup) => {
+    console.log("Looking for Patient");
     const data = await getUserWithName(
       donor_name,
       donor_district,
       donor_bloodGroup
     );
     setDonors(data);
+    console.log(data);
   };
   const findEmergencyPatients = async () => {
     try {
