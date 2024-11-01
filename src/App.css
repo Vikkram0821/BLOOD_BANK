@@ -377,7 +377,7 @@ body {
 }
 
 .hide {
-  display: none;
+ display:block
 }
 .hidden {
   display: none;
