@@ -1,4 +1,4 @@
-<h1 align="center">Blood Stream - A Blood Bank Application</h1>
+<h1 align="center">Blood Bank Application</h1>
 
 <p align="center">
   <strong>Eliminating Blood Scarcity through an Efficient Blood Donation and Distribution Platform</strong>
