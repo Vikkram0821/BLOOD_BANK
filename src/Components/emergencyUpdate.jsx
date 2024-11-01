@@ -51,8 +51,6 @@ const handleUpdatePatient = async () => {
       date
     };
 
-    // Set loading state
-    setIsLoading(true);
 
     const response = await updatePatient(patientData);
 
@@ -70,9 +68,7 @@ const handleUpdatePatient = async () => {
   } catch (error) {
     console.error('Error updating patient:', error);
     alert(`Error updating patient: ${error.message}`);
-  } finally {
-    setIsLoading(false);
-  }
+  } 
 };
   
   // const handleUpdatePatient = async () => {
