@@ -20,12 +20,15 @@ const UpdateDonor = ({ showTableUD, donors, setDonors }) => {
       await updateUser(editedDonor.id, editedDonor);
       alert("Donor updated successfully!");
 
+      // Update donor list state
       setDonors((prevDonors) =>
         prevDonors.map((donor) =>
           donor.id === editedDonor.id ? editedDonor : donor
         )
       );
       setEditingDonorId(null);
+
+      // Reload the page
       window.location.reload();
     } catch (error) {
       console.error("Error updating donor:", error);
