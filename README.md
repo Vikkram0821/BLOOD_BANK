@@ -7,7 +7,7 @@
 ## <h2>📜 Description</h2>
 
 <p>
-Blood Stream is a secure and efficient blood bank application that addresses the critical need for accessible blood donations. This application allows users to connect with verified blood donors and medical centers in times of need, offering streamlined search, location-based emergency alerts, and donor registration functionalities. With a focus on real-time data and responsive design, the app ensures that anyone in need can find a matching blood donor nearby quickly and easily.
+Blood Stream is a user-friendly blood bank application designed to quickly connect people in need with verified blood donors and medical centers. This app makes it easy to find blood donors, maintain an emergency patient list, and streamline the donation process. By providing real-time data and a responsive design, Blood Stream helps ensure that those in need can quickly locate a matching donor nearby.
 </p>
 
 ## <h2>💻 Tech Stack</h2>
