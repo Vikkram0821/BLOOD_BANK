@@ -9,8 +9,14 @@ const EmergencyUpdate = forwardRef(({ isUpdate2 }, ref) => {
   const [blood_group, setBloodGroup] = useState("");
   const [date, setDate] = useState("");
 
-  const handleUpdatePatient = async () => {
-    console.log("Hi");
+const handleUpdatePatient = async () => {
+  try {
+    // Validate required fields
+    if (!name || !age || !phone_number || !address || !city || !blood_group || !date) {
+      alert('Please fill in all required fields');
+      return;
+    }
+
     const patientData = {
       name,
       age,
@@ -23,18 +29,52 @@ const EmergencyUpdate = forwardRef(({ isUpdate2 }, ref) => {
 
     const response = await updatePatient(patientData);
 
-    if (response) {
-      alert("Patient Updated Successfully");
-      setName("");
-      setAge("");
-      setPhoneNumber("");
-      setAddress("");
-      setCity("");
-      setBloodGroup("");
-      setDate("");
+    if (response.success) {
+      alert('Patient Updated Successfully');
+      // Clear form
+      setName('');
+      setAge('');
+      setPhoneNumber('');
+      setAddress('');
+      setCity('');
+      setBloodGroup('');
+      setDate('');
+      
+      // Optional: Refresh page after successful update
+      window.location.reload();
     }
-    window.location.reload();
-  };
+  } catch (error) {
+    console.error('Error updating patient:', error);
+    alert(`Error updating patient: ${error.message}`);
+  }
+};
+  
+  // const handleUpdatePatient = async () => {
+  //   console.log("Hi");
+  //   const patientData = {
+  //     name,
+  //     age,
+  //     phone_number,
+  //     address,
+  //     city,
+  //     blood_group,
+  //     date,
+  //   };
+
+  //   const response = await updatePatient(patientData);
+
+  //   if (response) {
+  //     alert("Patient Updated Successfully");
+  //     setName("");
+  //     setAge("");
+  //     setPhoneNumber("");
+  //     setAddress("");
+  //     setCity("");
+  //     setBloodGroup("");
+  //     setDate("");
+  //   }
+  //   window.location.reload();
+  // };
 
   return (
     <div
