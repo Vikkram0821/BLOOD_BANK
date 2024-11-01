@@ -80,7 +80,7 @@ function App() {
       fetchDonors(city, blood);
       setDeletionOccurred(false);
     }
-  }, [deletionOccurred, setDeletionOccurred]);
+  }, [deletionOccurred, setDeletionOccurred, showTableUD]);
 
   const deleteEffect = () => {
     setCity(city);
@@ -158,7 +158,7 @@ function App() {
           showTable={showTable}
           donors={donors}
         />
-        <UpdateDonor showTableUD={showTableUD} donors={donors} />
+        {showTableUD && <UpdateDonor showTableUD={showTableUD} donors={donors} />}
       </DataProvider>
       <Footer />
     </>
