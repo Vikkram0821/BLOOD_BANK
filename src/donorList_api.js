@@ -88,7 +88,30 @@ export const getEmergencyPatients = async () => {
   const response = await axios.get(`${API_URL}/emergency`);
   return response.data;
 };
+// export const updatePatient = async (patientData) => {
+//   const res = await axios.post(`${API_URL}/createPatient`, patientData);
+//   return res.data;
+// };
 export const updatePatient = async (patientData) => {
-  const res = await axios.post(`${API_URL}/createPatient`, patientData);
-  return res.data;
+  try {
+    const response = await axios.post(
+      `${API_URL}/createPatient`, 
+      patientData,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        withCredentials: true
+      }
+    );
+    
+    if (response.data.error) {
+      throw new Error(response.data.error);
+    }
+    
+    return response.data;
+  } catch (error) {
+    console.error('Update patient error:', error);
+    throw error;
+  }
 };
