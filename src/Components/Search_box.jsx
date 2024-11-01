@@ -576,7 +576,7 @@ function SearchBox({
                 }
                 await findDonor(inputValue, selectedDistrict, selectedBlood);
                 showPad(false);
-                toggleDonorTableUD();
+                toggleDonorTable();
               } catch (err) {
                 console.error("Error occurred:", err);
               }
