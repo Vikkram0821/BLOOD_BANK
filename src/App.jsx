@@ -98,7 +98,11 @@ function App() {
       data = await getUserWithBlood(blood);
     }
     setDonors(data);
-    setShowTable(true);
+     if (data.length > 0) {
+        setShowTable(true);
+    } else {
+        setShowTable(false); // Optionally hide if no donors found
+    }
   };
 
   const findDonor = async (donor_name, donor_district, donor_bloodGroup) => {
