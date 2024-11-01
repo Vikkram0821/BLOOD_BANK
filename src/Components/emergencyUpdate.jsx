@@ -11,21 +11,48 @@ const EmergencyUpdate = forwardRef(({ isUpdate2 }, ref) => {
 
 const handleUpdatePatient = async () => {
   try {
-    // Validate required fields
-    if (!name || !age || !phone_number || !address || !city || !blood_group || !date) {
-      alert('Please fill in all required fields');
+    // Form validation
+    if (!name.trim()) {
+      alert('Please enter a name');
+      return;
+    }
+    if (!age) {
+      alert('Please enter an age');
+      return;
+    }
+    if (!phone_number.trim()) {
+      alert('Please enter a phone number');
+      return;
+    }
+    if (!address.trim()) {
+      alert('Please enter a hospital address');
+      return;
+    }
+    if (!city) {
+      alert('Please select a city');
+      return;
+    }
+    if (!blood_group) {
+      alert('Please select a blood group');
+      return;
+    }
+    if (!date) {
+      alert('Please select a date');
       return;
     }
 
     const patientData = {
-      name,
-      age,
-      phone_number,
-      address,
+      name: name.trim(),
+      age: parseInt(age, 10),
+      phone_number: phone_number.trim(),
+      address: address.trim(),
       city,
       blood_group,
-      date,
+      date
     };
+
+    // Set loading state
+    setIsLoading(true);
 
     const response = await updatePatient(patientData);
 
@@ -39,13 +66,12 @@ const handleUpdatePatient = async () => {
       setCity('');
       setBloodGroup('');
       setDate('');
-      
-      // Optional: Refresh page after successful update
-      window.location.reload();
     }
   } catch (error) {
     console.error('Error updating patient:', error);
     alert(`Error updating patient: ${error.message}`);
+  } finally {
+    setIsLoading(false);
   }
 };
   
