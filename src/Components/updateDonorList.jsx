@@ -28,10 +28,8 @@ const UpdateDonor = ({ showTableUD, donors, setDonors }) => {
         )
       );
       setEditingDonorId(null); // Reset editing state
-    } catch (error) {
-      console.error("Error updating donor:", error);
-      alert("Failed to update donor. Please try again.");
-    }
+     
+    } 
   };
 
   return (
@@ -76,21 +74,25 @@ const UpdateDonor = ({ showTableUD, donors, setDonors }) => {
                   }}
                 >
                   {editingDonorId === donor.id ? (
-                    <button
-                      onClick={handleUpdateSave}
-                      style={{
-                        backgroundColor: "green",
-                        color: "white",
-                        border: "none",
-                        padding: "5px",
-                        borderRadius: "3px",
-                        cursor: "pointer",
-                        fontSize: "0.8rem",
-                      }}
-                      className="Update_btn"
-                    >
-                      SAVE
-                    </button>
+                   <button
+  onClick={() => {
+    handleUpdateSave();
+    window.location.reload();
+  }}
+  style={{
+    backgroundColor: "green",
+    color: "white",
+    border: "none",
+    padding: "5px",
+    borderRadius: "3px",
+    cursor: "pointer",
+    fontSize: "0.8rem",
+  }}
+  className="Update_btn"
+>
+  SAVE
+</button>
+
                   ) : (
                     <button
                       onClick={() => handleEditClick(donor)}
