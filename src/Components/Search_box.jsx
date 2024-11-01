@@ -486,7 +486,6 @@ function SearchBox({
             )}
           </div>
 
-          <div></div>
         </div>
         <div className={`donation_info ${show == "updateDonor" ? "" : "show"}`}>
           {/* DONATION INFO */}
@@ -576,7 +575,7 @@ function SearchBox({
                 }
                 await findDonor(inputValue, selectedDistrict, selectedBlood);
                 showPad(false);
-                toggleDonorTable();
+                toggleDonorTableUD();
               } catch (err) {
                 console.error("Error occurred:", err);
               }
