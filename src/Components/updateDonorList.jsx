@@ -22,7 +22,7 @@ const UpdateDonor = ({ showTableUD, donors }) => {
     window.location.reload();
 
     return (
-      <div className={`donors_list_Table ${showTableUD ? "" : "hidden hide"}`}>
+      <div className={`donors_list_Update_Table ${showTableUD ? "" : "hidden hide"}`}>
         {donors.length > 0 ? (
           <table
             style={{
