@@ -1,9 +1,13 @@
-<h1 align="center">Blood Bank Application</h1>
+<p align="center">
+  <a href="https://blood-bank-1.netlify.app" style="font-size: 18px; font-weight: bold; text-decoration: none; color: #0073e6;">
+    Blood-Bank-Application
+  </a>
+</p>
+
 
 <p align="center">
   <strong>Eliminating Blood Scarcity through an Efficient Blood Donation and Distribution Platform</strong>
 </p>
-<a align="center" href="blood-bank-1.netlify.app"> Blood-Bank-Application</a>
 
 ## <h2>📜 Description</h2>
 
