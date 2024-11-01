@@ -94,7 +94,6 @@ export const getEmergencyPatients = async () => {
 // };
 export const updatePatient = async (patientData) => {
   try {
-    console.log('Sending patient data:', patientData);
     
     const response = await axios.post(
       `${API_URL}/createPatient`,
@@ -117,16 +116,5 @@ export const updatePatient = async (patientData) => {
     return response.data;
   } catch (error) {
     console.error('Update patient error:', error);
-    if (error.response) {
-      // Server responded with error
-      console.error('Server error details:', error.response.data);
-      throw new Error(error.response.data.error || 'Server error');
-    } else if (error.request) {
-      // Request made but no response
-      throw new Error('No response from server');
-    } else {
-      // Request setup error
-      throw new Error(error.message);
-    }
   }
 };
