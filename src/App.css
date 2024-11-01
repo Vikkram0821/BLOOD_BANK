@@ -375,14 +375,14 @@ body {
 .donors_list_Table2 {
   color: white;
 }
-
+/* 
 .hide {
  display:block
 }
 .hidden {
   display: none;
 }
-
+ */
 .show {
   display: none;
 }
