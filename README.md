@@ -6,7 +6,7 @@
 </p>
 
 
-<p align="center">
+<p >
   <strong>Eliminating Blood Scarcity through an Efficient Blood Donation and Distribution Platform</strong>
 </p>
 
