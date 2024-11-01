@@ -29,7 +29,7 @@ const Donor = ({ deleteEffect, showTable, donors }) => {
   };
 
   return (
-    <div className={`donors_list_Table ${showTable ? "" : "hidden hide"}`}>
+    <div className={`donors_list_Table ${showTable ? "" : ""}`}>
       {donors.length > 0 ? (
         <>
           <table
