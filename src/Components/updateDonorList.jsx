@@ -16,22 +16,21 @@ const UpdateDonor = ({ showTableUD, donors, setDonors }) => {
   };
 
   const handleUpdateSave = async () => {
+    console.log("Updating donor:", editedDonor);
     try {
       await updateUser(editedDonor.id, editedDonor);
       alert("Donor updated successfully!");
 
-      // Update donor list state
+      // Update donor list state without reloading
       setDonors((prevDonors) =>
         prevDonors.map((donor) =>
           donor.id === editedDonor.id ? editedDonor : donor
         )
       );
-      setEditingDonorId(null);
-
-      // Reload the page
-      window.location.reload();
+      setEditingDonorId(null); // Reset editing state
     } catch (error) {
       console.error("Error updating donor:", error);
+      alert("Failed to update donor. Please try again.");
     }
   };
 
@@ -207,7 +206,7 @@ const UpdateDonor = ({ showTableUD, donors, setDonors }) => {
           </tbody>
         </table>
       ) : (
-        <p style={{ textAlign: "center", color: "black", padding: "200px" }}>
+        <p style={{ textAlign: 'center', color:'black', padding:'200px' }}>
           No donors found.
         </p>
       )}
