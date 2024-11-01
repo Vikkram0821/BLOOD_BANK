@@ -569,19 +569,19 @@ function SearchBox({
               <option value="O-">O-</option>
             </select>
           </div>
-          <button
+           <button
             onClick={() => {
-               try {
-      if (show_bc === true) { 
-        setShow_bc(false);
-      }
-      findDonor(inputValue, selectedDistrict, selectedBlood); 
-      showPad(false);
-      toggleDonorTable();
-    } catch (err) {
-      console.error("Error occurred:", err); 
-    }
-             
+              try {
+                if (show_bc === true) {
+                  setShow_bc(false);
+                  toggleShow();
+                }
+                findDonor(inputValue, selectedDistrict, selectedBlood);
+                showPad(false);
+                toggleDonorTableUD();
+              } catch (err) {
+                console.error("Error occurred:", err);
+              }
             }}
             className="search_button btn_uds"
           >
