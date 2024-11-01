@@ -44,6 +44,8 @@ function SearchBox({
     }
 
     fetchDonors(district, blood);
+    toggleDonorTable();
+    
   };
 
   return (
