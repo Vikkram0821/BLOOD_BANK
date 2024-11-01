@@ -44,8 +44,6 @@ function SearchBox({
     }
 
     fetchDonors(district, blood);
-   
-    
   };
 
   return (
@@ -569,14 +567,14 @@ function SearchBox({
               <option value="O-">O-</option>
             </select>
           </div>
-           <button
-            onClick={() => {
+          <button
+            onClick={async () => {
               try {
                 if (show_bc === true) {
                   setShow_bc(false);
                   toggleShow();
                 }
-                findDonor(inputValue, selectedDistrict, selectedBlood);
+                await findDonor(inputValue, selectedDistrict, selectedBlood);
                 showPad(false);
                 toggleDonorTableUD();
               } catch (err) {
