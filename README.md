@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://blood-bank-1.netlify.app" style="font-size: 22px; font-weight: bolder; text-decoration: none; color: #0073e6;">
+  <a href="https://blood-bank-1.netlify.app" style="font-size: 32px; font-weight: bolder; text-decoration: none; color: #0073e6;">
     Blood-Bank-Application
   </a>
 </p>
