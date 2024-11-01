@@ -44,7 +44,7 @@ function SearchBox({
     }
 
     fetchDonors(district, blood);
-    toggleDonorTable();
+   
     
   };
 
@@ -574,10 +574,10 @@ function SearchBox({
                try {
       if (show_bc === true) { 
         setShow_bc(false);
-        toggleShow();
       }
       findDonor(inputValue, selectedDistrict, selectedBlood); 
       showPad(false);
+      toggleDonorTable();
     } catch (err) {
       console.error("Error occurred:", err); 
     }
